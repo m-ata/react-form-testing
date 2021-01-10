@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Typography, Button, Container, Grid, Card, TextField, Divider, TextareaAutosize} from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 
@@ -35,7 +35,18 @@ const useStyles = makeStyles(() => createStyles({
 
 const Form = () => {
 
+    const [state, setState] = useState({
+        userName: '',
+        email: '',
+        password: '',
+        about: ''
+    });
+
     const classes = useStyles();
+
+    const handleSubmit = () => {
+        console.log(state);
+    }
 
     return (
         <Container className={classes.root}>
@@ -56,7 +67,7 @@ const Form = () => {
                             variant={'outlined'}
                             size={'small'}
                             fullWidth
-                            type={'text'}
+                            onChange={(e) => setState({...state, userName: e.target.value})}
                             />
                     </Grid>
                 </Grid>
@@ -73,6 +84,9 @@ const Form = () => {
                             size={'small'}
                             fullWidth
                             type={'email'}
+                            onChange={(e) => {
+                                setState({...state, email: e.target.value});
+                            }}
                             />
                     </Grid>
                 </Grid>
@@ -89,6 +103,7 @@ const Form = () => {
                             size={'small'}
                             fullWidth
                             type={'password'}
+                            onChange={(e) => setState({...state, password: e.target.value})}
                             />
                     </Grid>
                 </Grid>
@@ -103,12 +118,19 @@ const Form = () => {
                             data-testid={'about'}
                             rowsMin={5}
                             className={classes.textArea}
+                            onChange={(e) => setState({...state, about: e.target.value})}
                             />
                     </Grid>
                 </Grid>
                 <Grid container className={classes.row}>
                     <Grid item xs={8}> 
-                        <Button data-testid={'register-id'} className={classes.button} variant="contained" color="primary">
+                        <Button 
+                            data-testid={'register-id'} 
+                            className={classes.button} 
+                            variant="contained" 
+                            color="primary"
+                            onClick={handleSubmit}
+                            >
                             REGISTER
                         </Button> 
                     </Grid>
