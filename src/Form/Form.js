@@ -46,58 +46,61 @@ const Form = () => {
                 <Divider />
                 <Grid container className={classes.row}>
                     <Grid item xs={3}> 
-                        <Typography component={'span'} variant={'span'} className={classes.text} >
+                        <Typography component={'span'} className={classes.text} >
                             User Name :
                         </Typography> 
                     </Grid>
                     <Grid item xs={5}>
                         <TextField
-                            id={'userName'}
+                            data-testid={'userName'}
                             variant={'outlined'}
                             size={'small'}
                             fullWidth
+                            type={'text'}
                             />
                     </Grid>
                 </Grid>
                 <Grid container className={classes.row}>
                     <Grid item xs={3}> 
-                        <Typography component={'span'} variant={'span'} className={classes.text}>
+                        <Typography component={'span'} className={classes.text}>
                             Email :
                         </Typography> 
                     </Grid>
                     <Grid item xs={5}>
                         <TextField
-                            id={'email'}
+                            data-testid={'email'}
                             variant={'outlined'}
                             size={'small'}
                             fullWidth
+                            type={'email'}
                             />
                     </Grid>
                 </Grid>
                 <Grid container className={classes.row}>
                     <Grid item xs={3}> 
-                        <Typography component={'span'} variant={'span'} className={classes.text}>
+                        <Typography component={'span'} className={classes.text}>
                             Password :
                         </Typography> 
                     </Grid>
                     <Grid item xs={5}>
                         <TextField
-                            id={'password'}
+                            data-testid={'password'}
                             variant={'outlined'}
                             size={'small'}
                             fullWidth
+                            type={'password'}
                             />
                     </Grid>
                 </Grid>
                 <Grid container className={classes.row}>
                     <Grid item xs={3}> 
-                        <Typography component={'span'} variant={'span'} className={classes.text}>
+                        <Typography component={'span'} className={classes.text}>
                             About Yourself :
                         </Typography> 
                     </Grid>
                     <Grid item xs={5}>
                         <TextareaAutosize
-                            id={'about'}
+                            data-testid={'about'}
                             rowsMin={5}
                             className={classes.textArea}
                             />
@@ -105,7 +108,7 @@ const Form = () => {
                 </Grid>
                 <Grid container className={classes.row}>
                     <Grid item xs={8}> 
-                        <Button className={classes.button} variant="contained" color="primary">
+                        <Button data-testid={'register-id'} className={classes.button} variant="contained" color="primary">
                             REGISTER
                         </Button> 
                     </Grid>

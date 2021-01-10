@@ -2,7 +2,7 @@ import Form from "./Form/Form";
 
 function App() {
   return (
-    <div className="App">
+    <div data-testid={'app-id'} className="App">
       <Form />
     </div>
   );
